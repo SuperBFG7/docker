@@ -1,0 +1,15 @@
+[Unit]
+Description=named container
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStartPre=/usr/local/bin/named_IPv6.sh flush
+ExecStart=/usr/bin/docker start -a named
+ExecStartPost=/usr/local/bin/named_IPv6.sh
+ExecStop=/usr/bin/docker stop named
+ExecStopPost=/usr/local/bin/named_IPv6.sh flush
+
+[Install]
+WantedBy=default.target
