@@ -1,11 +1,10 @@
-FROM l3iggs/archlinux:latest
+FROM greyltc/archlinux
 
 ARG UID
 ARG GID
 
-RUN pacman -Sy --noconfirm bind && pacman -Scc --noconfirm && \
-		groupadd -g $GID named && \
-		useradd -r -u $UID -g $GID -s /usr/bin/nologin named
+RUN pacman -Sy --noconfirm systemd bind && pacman -Scc --noconfirm && \
+		pacman -Rns --noconfirm systemd
 
 VOLUME /var/named
 EXPOSE 53 53/udp 953
