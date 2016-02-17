@@ -1,7 +1,7 @@
 all: named
 
 named:
-	docker build -t superbfg7/named --build-arg "UID=`id -u named`" --build-arg "GID=`id -g named`" .
+	docker build -t superbfg7/named .
 	docker tag -f superbfg7/named superbfg7/named:`/usr/bin/pacman -Sp --print-format %v bind`
 	docker create --name=named -v /etc/localtime:/etc/localtime:ro \
 						 		-v /etc/named.conf:/etc/named.conf:ro \
