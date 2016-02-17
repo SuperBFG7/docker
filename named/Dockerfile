@@ -1,8 +1,5 @@
 FROM greyltc/archlinux
 
-ARG UID
-ARG GID
-
 RUN pacman -Sy --noconfirm systemd bind && pacman -Scc --noconfirm && \
 		pacman -Rns --noconfirm systemd
 
