@@ -1,6 +1,6 @@
 FROM greyltc/archlinux
 
-RUN pacman -Sy --noconfirm systemd bind && pacman -Scc --noconfirm && \
+RUN pacman -Syu --noconfirm systemd bind && /bin/yes | pacman -Scc && \
 		pacman -Rns --noconfirm systemd
 
 VOLUME /var/named
