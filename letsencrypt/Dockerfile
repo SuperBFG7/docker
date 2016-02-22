@@ -1,6 +1,6 @@
 FROM greyltc/archlinux
 
-RUN pacman -Sy --noconfirm letsencrypt && pacman -Scc --noconfirm
+RUN pacman -Syu --noconfirm letsencrypt && /bin/yes | pacman -Scc --noconfirm
 
 #ADD letsencrypt.sh /usr/local/bin
 
