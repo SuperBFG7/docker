@@ -11,7 +11,7 @@ force-build:
 	docker build -t superbfg7/named --no-cache .
 
 tag:
-	docker tag -f superbfg7/named superbfg7/named:`/usr/bin/pacman -Sp --print-format %v bind`
+	docker tag superbfg7/named superbfg7/named:`/usr/bin/pacman -Sp --print-format %v bind`
 
 create:
 	docker rename named named_old
