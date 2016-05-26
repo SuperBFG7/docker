@@ -11,7 +11,7 @@ force-build:
 	docker build -t superbfg7/postgrey --no-cache .
 
 tag:
-	docker tag superbfg7/postgrey superbfg7/postgrey:`/usr/bin/pacman -Sp --print-format %v bind`
+	docker tag superbfg7/postgrey superbfg7/postgrey:`/usr/bin/pacman -Sp --print-format %v postgrey`
 
 create:
 	docker rename postgrey postgrey_old
