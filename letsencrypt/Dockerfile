@@ -1,6 +1,6 @@
 FROM greyltc/archlinux
 
-RUN pacman -Syu --noconfirm letsencrypt && /bin/yes | pacman -Scc
+RUN pacman -Syu --noconfirm certbot && /bin/yes | pacman -Scc
 
 #ADD letsencrypt.sh /usr/local/bin
 
@@ -10,4 +10,4 @@ VOLUME /srv/httpd
 
 #CMD ["/usr/local/bin/letsencrypt.sh"]
 #CMD ["/bin/bash"]
-CMD ["/usr/bin/letsencrypt", "renew"]
+CMD ["/usr/bin/certbot", "renew"]
