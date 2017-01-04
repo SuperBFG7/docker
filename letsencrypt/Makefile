@@ -18,7 +18,7 @@ create:
 	docker create --name=letsencrypt -v /etc/localtime:/etc/localtime:ro \
 						 			 -v /etc/letsencrypt/:/etc/letsencrypt/ \
 									 -v /var/log/letsencrypt/:/var/log/letsencrypt/ \
-									 -v /home/daniel/www/:/srv/http/ \
+									 -v /var/lib/letsencrypt/:/var/lib/letsencrypt/ \
 									 superbfg7/letsencrypt
 
 clean:
