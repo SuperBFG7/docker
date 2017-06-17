@@ -17,6 +17,8 @@ if [ ! -z "$1" ]; then
 	echo
 	echo "for DNS challenges use:"
 	echo "# certbot certonly --manual --preferred-challenges dns -d DOMAIN"
+	echo "and to update the DNS challenge accordingly use"
+	echo "# dns_challenge.sh CHALLENGE_NAME CHALLENGE_VALUE"
 	echo
 fi
 
