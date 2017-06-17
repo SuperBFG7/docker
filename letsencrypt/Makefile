@@ -1,3 +1,5 @@
+TARGET=/usr/local/bin/
+
 all: letsencrypt
 
 letsencrypt: build tag create
@@ -29,3 +31,11 @@ proper: clean
 
 run:
 	docker start -ai letsencrypt
+
+install:
+	cp -iu *.sh $(TARGET)
+
+uninstall:
+	for i in *.sh ; do \
+		rm -i "$(TARGET)"`basename $$i`; \
+	done
