@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  mpd:
+    image: superbfg7/mpd:latest
+    ports:
+        - "127.0.0.1:6600:6600"
+        - "8000:8000"
+    networks:
+        - music_stack
+    volumes:
+        - /data/music/rip/:/music/:ro
+        - /home/daniel/git/docker/mpd/mpd/:/mpd/
+
+  ympd:
+    image: superbfg7/ympd:latest
+    ports:
+        - "127.0.0.1:8080:8080"
+    depends_on:
+        - mpd
+    networks:
+        - music_stack
+
+networks:
+  music_stack:
+    driver: bridge
+
