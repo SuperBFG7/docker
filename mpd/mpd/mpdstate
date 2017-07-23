@@ -1,0 +1,25 @@
+sw_volume: 100
+audio_device_state:1:mp3_256k
+state: stop
+current: 0
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Band Of Skulls - Himalayan/01 - Asleep At The Wheel.flac
+1:Band Of Skulls - Himalayan/02 - Himalayan.flac
+2:Band Of Skulls - Himalayan/03 - Hoochie Coochie.flac
+3:Band Of Skulls - Himalayan/04 - Cold Sweat.flac
+4:Band Of Skulls - Himalayan/05 - Nightmares.flac
+5:Band Of Skulls - Himalayan/06 - Brothers And Sisters.flac
+6:Band Of Skulls - Himalayan/07 - I Guess I Know You Fairly Well.flac
+7:Band Of Skulls - Himalayan/08 - You Are All That I Am Not.flac
+8:Band Of Skulls - Himalayan/09 - I Feel Like Ten Men,  Nine Dead And One Dying..flac
+9:Band Of Skulls - Himalayan/10 - Toreador.flac
+10:Band Of Skulls - Himalayan/11 - Heaven's Key.flac
+11:Band Of Skulls - Himalayan/12 - Get Yourself Together.flac
+playlist_end
