@@ -1,21 +1,23 @@
-all: mpd
+all: ympd
 
-mpd: build tag
+ympd: build tag
 
 force: force-build tag
 
-build: ympd-git*xz
-	docker build -t superbfg7/mpd .
+build: htdigest ympd-git*xz
+	sudo docker build -t superbfg7/ympd .
 
 force-build:
-	docker build -t superbfg7/mpd --no-cache .
+	sudo docker build -t superbfg7/ympd --no-cache .
 
 tag:
-	docker tag superbfg7/mpd superbfg7/mpd:`/usr/bin/pacman -Sp --print-format %v mpd`
+	sudo docker tag superbfg7/ympd superbfg7/ympd:`date +%F`
 
 start:
-	docker-compose up -d
+	sudo docker-compose up -d
 
 stop:
-	docker-compose down
+	sudo docker-compose down
 
+htdigest:
+	htdigest -c htdigest ympd
