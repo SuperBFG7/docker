@@ -4,7 +4,7 @@ mpd: build tag
 
 force: force-build tag
 
-build:
+build: ympd-git*xz
 	docker build -t superbfg7/mpd .
 
 force-build:
@@ -18,3 +18,4 @@ start:
 
 stop:
 	docker-compose down
+
