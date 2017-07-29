@@ -4,7 +4,7 @@ ympd: build tag
 
 force: force-build tag
 
-build: htdigest ympd-git*xz
+build: htdigest
 	sudo docker build -t superbfg7/ympd .
 
 force-build:
