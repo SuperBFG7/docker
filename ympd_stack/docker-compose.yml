@@ -4,7 +4,6 @@ services:
   mpd:
     image: superbfg7/mpd:latest
     ports:
-        #        - "127.0.0.1:6600:6600"
         - "8000:8000"
     networks:
         - music_stack
