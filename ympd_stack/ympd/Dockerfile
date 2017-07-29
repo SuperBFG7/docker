@@ -11,7 +11,8 @@ RUN pacmaster.sh -Syu cmake gcc make pkg-config && \
 		cmake .. && \
 		make && \
 		make install && \
-		pacmaster.sh -R binutils gc guile jsoncpp libatomic_ops libmpc libtool libuv libxml2 shared-mime-info cmake gcc make pkg-config
+		pacmaster.sh -R binutils gc guile jsoncpp libatomic_ops libmpc libtool libuv \
+						libxml2 shared-mime-info cmake gcc make pkg-config
 
 EXPOSE 8080
 
