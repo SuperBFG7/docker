@@ -13,11 +13,5 @@ force-build:
 tag:
 	sudo docker tag superbfg7/ympd superbfg7/ympd:`date +%F`
 
-start:
-	sudo docker-compose up -d
-
-stop:
-	sudo docker-compose down
-
 htdigest:
 	htdigest -c htdigest ympd

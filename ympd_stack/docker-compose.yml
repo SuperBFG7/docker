@@ -1,16 +1,16 @@
-version: '2'
+version: '3.3'
 
 services:
   mpd:
     image: superbfg7/mpd:latest
     ports:
-        - "127.0.0.1:6600:6600"
+        #        - "127.0.0.1:6600:6600"
         - "8000:8000"
     networks:
         - music_stack
     volumes:
-        - /data/music/rip/:/music/:ro
-        - /home/daniel/git/docker/mpd/mpd/:/mpd/
+        - /data/music/library/beets/flac/new/:/music/:ro
+        - /home/daniel/mpd/:/mpd/
 
   ympd:
     image: superbfg7/ympd:latest
@@ -20,8 +20,13 @@ services:
         - mpd
     networks:
         - music_stack
+    secrets:
+        - htdigest
 
 networks:
-  music_stack:
-    driver: bridge
+    music_stack:
+        driver: bridge
 
+secrets:
+    htdigest:
+        file: ympd/htdigest
