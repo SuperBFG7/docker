@@ -14,4 +14,7 @@ tag:
 	sudo docker tag superbfg7/ympd superbfg7/ympd:`date +%F`
 
 htdigest:
-	htdigest -c htdigest ympd
+	echo "creating htdigest for user ympd"
+	# htdigest -c file realm user
+	# user can be changed
+	htdigest -c htdigest ympd ympd
