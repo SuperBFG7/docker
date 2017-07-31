@@ -2,19 +2,21 @@ version: '3.3'
 
 services:
   mpd:
+    restart: unless-stopped
     image: superbfg7/mpd:latest
     ports:
         - "8000:8000"
     networks:
         - music_stack
     volumes:
-        - /data/music/library/beets/flac/new/:/music/:ro
+        - /data/music/rip/:/music/:ro
         - /home/daniel/mpd/:/mpd/
 
   ympd:
+    restart: unless-stopped
     image: superbfg7/ympd:latest
     ports:
-        - "127.0.0.1:8080:8080"
+        - "127.0.0.1:7999:8080"
     depends_on:
         - mpd
     networks:
