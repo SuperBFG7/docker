@@ -1,6 +1,6 @@
 FROM superbfg7/archlinux-minimal
 
-RUN pacmaster.sh -Syu --noconfirm mpd
+RUN pacmaster.sh -Syu --noconfirm mpd mpc
 
 COPY mpd.conf /etc/
 VOLUME ["/mpd", "/music"]
