@@ -1,7 +1,7 @@
 FROM superbfg7/archlinux-minimal
 
 RUN pacmaster.sh -Syu libmpdclient git && \
-		git clone https://github.com/SuperBFG7/ympd.git && \
+		git clone -b docker https://github.com/SuperBFG7/ympd.git && \
 		mkdir ympd/build && \
 		pacmaster.sh -R git perl-error 
 
