@@ -13,7 +13,7 @@ force-build:
 	docker build -t superbfg7/letsencrypt --no-cache .
 
 tag:
-	docker tag superbfg7/letsencrypt superbfg7/letsencrypt:`/usr/bin/pacman -Sp --print-format %v certbot`
+	docker tag superbfg7/letsencrypt superbfg7/letsencrypt:`/usr/bin/pacman -Sp --print-format %v certbot | tail -1`
 
 create:
 	docker rm letsencrypt

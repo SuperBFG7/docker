@@ -1,12 +1,11 @@
-.PHONY: archlinux
-
 all: archlinux-minimal.tar.gz
 
-archlinux:
+archlinux.base:
 	sudo docker pull greyltc/archlinux
 	sudo docker build --no-cache -t superbfg7/archlinux .
+	touch archlinux.base
 
-archlinux-minimal.tar.gz: archlinux
+archlinux-minimal.tar.gz: archlinux.base
 	sudo docker run --name=archlinux-base superbfg7/archlinux
 	sudo docker export archlinux-base > archlinux-minimal.tar
 	sudo docker import archlinux-minimal.tar superbfg7/archlinux-minimal
@@ -19,3 +18,4 @@ clean:
 
 proper: clean
 	sudo docker rmi superbfg7/archlinux
+	rm -f archlinux
