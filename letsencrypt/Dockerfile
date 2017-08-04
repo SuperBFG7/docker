@@ -1,6 +1,6 @@
-FROM greyltc/archlinux
+FROM superbfg7/archlinux-minimal
 
-RUN pacman -Syu --noconfirm certbot && /bin/yes | pacman -Scc
+RUN pacmaster.sh -Syu --noconfirm certbot && /bin/yes | pacman -Scc
 
 VOLUME /etc/letsencrypt
 VOLUME /var/log/letsencrypt

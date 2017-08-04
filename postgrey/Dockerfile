@@ -1,6 +1,6 @@
-FROM greyltc/archlinux
+FROM superbfg7/archlinux-minimal
 
-RUN pacman -Syu --noconfirm postgrey && /bin/yes | pacman -Scc
+RUN pacmaster.sh -Syu --noconfirm postgrey && /bin/yes | pacman -Scc
 
 EXPOSE 10030
 
