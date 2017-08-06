@@ -9,8 +9,8 @@ services:
     networks:
         - music_stack
     volumes:
-        - /data/music/rip/:/music/:ro
-        - /home/daniel/mpd/:/mpd/
+        - /path/to/your/music/:/music/:ro
+        - /path/to/your/mpd/dir/:/mpd/
 
   ympd:
     restart: unless-stopped
@@ -23,6 +23,14 @@ services:
         - music_stack
     secrets:
         - htdigest
+
+  sima:
+    restart: unless-stopped
+    image: superbfg7/sima:latest
+    depends_on:
+        - mpd
+    networks:
+        - music_stack
 
 networks:
     music_stack:
