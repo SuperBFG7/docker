@@ -1,21 +1,22 @@
 all: archlinux-minimal.tar.gz
 
 archlinux.base:
-	sudo docker pull greyltc/archlinux
-	sudo docker build --no-cache -t superbfg7/archlinux .
+	docker pull greyltc/archlinux
+	docker build --no-cache -t superbfg7/archlinux .
 	touch archlinux.base
 
 archlinux-minimal.tar.gz: archlinux.base
-	sudo docker run --name=archlinux-base superbfg7/archlinux
-	sudo docker export archlinux-base > archlinux-minimal.tar
-	sudo docker import archlinux-minimal.tar superbfg7/archlinux-minimal
-	sudo docker tag superbfg7/archlinux-minimal superbfg7/archlinux-minimal:`date +%F`
+	docker run --name=archlinux-base superbfg7/archlinux
+	docker export archlinux-base > archlinux-minimal.tar
+	docker import archlinux-minimal.tar superbfg7/archlinux-minimal
+	docker tag superbfg7/archlinux-minimal superbfg7/archlinux-minimal:`date +%F`
 	gzip archlinux-minimal.tar
 
 clean:
 	rm -f archlinux-minimal.tar.gz
-	sudo docker rm archlinux-base
+	rm -f archlinux.base
+	docker rm archlinux-base
 
 proper: clean
-	sudo docker rmi superbfg7/archlinux
+	docker rmi superbfg7/archlinux
 	rm -f archlinux
