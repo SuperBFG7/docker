@@ -1,5 +1,5 @@
-.PHONY: mpd ympd
-SERVICES = mpd ympd
+.PHONY: mpd ympd sima
+SERVICES = mpd ympd sima
 
 all: $(SERVICES)
 
