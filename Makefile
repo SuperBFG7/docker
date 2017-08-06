@@ -1,7 +1,7 @@
 .PHONY: archlinux-minimal letsencrypt named postgrey
 BASE = archlinux-minimal
-RESTART_MODULES = named postgrey $(STACKS)
-MODULES = letsencrypt $(RESTART_MODULES)
+MODULES = letsencrypt $(RESTART_MODULES) $(STACKS)
+RESTART_MODULES = named postgrey
 STACKS = ympd_stack
 PUSH_MODULES = $(BASE) $(MODULES)
 
@@ -9,13 +9,17 @@ DOCKER_USER = superbfg7
 
 all: $(MODULES)
 
+force:
+	$(MAKE) -C $(BASE) clean
+	$(MAKE) all
+
 restart:
 	for i in $(RESTART_MODULES); do \
 		$(MAKE) -C $$i create restart cleanup; \
 	done 
 
 $(BASE):
-	$(MAKE) -C $@ clean all
+	$(MAKE) -C $@
 
 $(MODULES): $(BASE)
 	$(MAKE) -C $@
