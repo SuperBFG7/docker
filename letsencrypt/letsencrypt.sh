@@ -20,6 +20,11 @@ if [ ! -z "$1" ]; then
 	echo "and to update the DNS challenge accordingly use"
 	echo "# dns_challenge.sh CHALLENGE_NAME CHALLENGE_VALUE"
 	echo
+	echo "to update an existing certificate with more/less domains use:"
+	echo "# certbot certificates"
+	echo "then pick the desired certificate (name) and use:"
+	echo "# certbot certonly --cert-name CERT_NAME -d DOMAIN1 -d DOMAIN2"
+	echo
 fi
 
 # reload httpd
