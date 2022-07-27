@@ -1,2 +1,4 @@
 *.tar.gz
 *.tar.xz
+htdigest
+archlinux-minimal/archlinux.base
