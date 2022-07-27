@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/usr/bin/pacman --noconfirm $@
+/usr/bin/pacman --noconfirm "$@"
 
 if [ "$1" != "-Syu" ]; then
 	exit 0
